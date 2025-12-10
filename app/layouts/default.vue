@@ -13,13 +13,22 @@ import { NuxtIconSvg } from "@nuxt/icon/runtime/components/svg.js";
         >
           <NuxtLink to="/">dashboard</NuxtLink>
         </span>
+        <span
+          class="hover:border-b-2 hover:border-[#64748b] hover:text-[#64748b] transition-colors"
+        >
+          <NuxtLink to="/patients">patients</NuxtLink> </span
+        ><span
+          class="hover:border-b-2 hover:border-[#64748b] hover:text-[#64748b] transition-colors"
+        >
+          <NuxtLink to="/appointments">appointments</NuxtLink>
+        </span>
       </div>
       <div class="flex items-center gap-7">
         <input
           class="border h-9 w-3xs text-[#64748b] border-[#64748b] indent-5 rounded-lg outline-blue-600"
           type="search"
           name=""
-          value="search"
+          placeholder="search"
           id=""
         />
         <Icon
