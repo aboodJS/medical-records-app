@@ -6,19 +6,19 @@ console.log(data.value);
 <template>
   <main class="bg-[#f8fafc]">
     <h1 class="text-3xl font-bold">Patients</h1>
-    <table>
+    <table class="table-auto w-[50vw] border rounded-md m-auto">
       <thead>
-        <tr>
+        <tr class="bg-[#e3e5e6]">
           <th>Name</th>
           <th>Age</th>
           <th>Stay</th>
         </tr>
       </thead>
       <tbody v-for="patient in data">
-        <tr>
-          <td>{{ patient.name }}</td>
-          <td>{{ patient.age }}</td>
-          <td>{{ patient.stay }}</td>
+        <tr class="border">
+          <td class="border text-center">{{ patient.name }}</td>
+          <td class="border text-center">{{ patient.age }}</td>
+          <td class="border text-center">{{ patient.stay }}</td>
         </tr>
       </tbody>
     </table>
