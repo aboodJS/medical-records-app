@@ -3,7 +3,7 @@ import { NuxtIconSvg } from "@nuxt/icon/runtime/components/svg.js";
 </script>
 
 <template>
-  <main>
+  <main class="bg-white">
     <nav class="flex justify-evenly w-screen m-auto h-16 items-center">
       <div class="flex items-center gap-7">
         <h2 class="font-bold text-xl">MediRecord Admin</h2>
