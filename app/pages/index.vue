@@ -1,5 +1,38 @@
+<script lang="ts" setup>
+async function addPatient() {
+  let data = { name: "Abdallah", age: 21, stay: "3 days" };
+  const req = await $fetch("/api/records", {
+    method: "post",
+    body: data,
+  });
+  console.log(req.res);
+}
+
+const dialog = useTemplateRef("dialog");
+function openForum() {
+  dialog.value?.showModal();
+}
+
+function closeModal() {
+  dialog.value?.close();
+}
+</script>
+
 <template>
   <main class="bg-[#f8fafc]">
+    <dialog ref="dialog">
+      <button class="h-7 w-7" @click="closeModal">
+        <Icon name="ri:close-large-line" width="30" height="30" />
+      </button>
+      <p>enter patient's data</p>
+      <div class="grid">
+        <input type="text" placeholder="patient's name" /><input
+          type="number"
+          placeholder="patient's age"
+        />
+        <button>send Data</button>
+      </div>
+    </dialog>
     <div class="flex justify-between m-auto items-center w-[95vw]">
       <span
         ><h1 class="text-3xl font-bold">Dashboard Overview</h1>
@@ -13,6 +46,7 @@
           Generate Report
         </div>
         <div
+          @click="openForum"
           class="flex justify-evenly items-center cursor-pointer hover:bg-[#1d4ed8] transition-colors bg-[#2563eb] text-white h-10 px-4 rounded-md"
         >
           <Icon name="uil:plus" />
