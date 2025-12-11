@@ -1,6 +1,12 @@
 <script lang="ts" setup>
+const pName = useTemplateRef("p-name");
+const pAge = useTemplateRef("p-age");
 async function addPatient() {
-  let data = { name: "Abdallah", age: 21, stay: "3 days" };
+  let data = {
+    name: pName.value?.value,
+    age: pAge.value?.value,
+    stay: "3 days",
+  };
   const req = await $fetch("/api/records", {
     method: "post",
     body: data,
@@ -20,17 +26,27 @@ function closeModal() {
 
 <template>
   <main class="bg-[#f8fafc]">
-    <dialog ref="dialog">
+    <dialog ref="dialog" class="m-auto">
       <button class="h-7 w-7" @click="closeModal">
         <Icon name="ri:close-large-line" width="30" height="30" />
       </button>
       <p>enter patient's data</p>
       <div class="grid">
-        <input type="text" placeholder="patient's name" /><input
+        <input type="text" placeholder="patient's name" ref="p-name" /><input
           type="number"
+          ref="p-age"
           placeholder="patient's age"
         />
-        <button>send Data</button>
+        <button
+          @click="
+            () => {
+              addPatient();
+              closeModal();
+            }
+          "
+        >
+          send Data
+        </button>
       </div>
     </dialog>
     <div class="flex justify-between m-auto items-center w-[95vw]">
