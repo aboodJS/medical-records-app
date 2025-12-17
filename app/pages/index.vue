@@ -71,5 +71,10 @@ function closeModal() {
         </div></span
       >
     </div>
+    <div class="flex w-[95vw] m-auto justify-evenly gap-6">
+      <DataBox data-name="Total patients" status-number="5"></DataBox
+      ><DataBox data-name="Appointments" status-number="1"></DataBox
+      ><DataBox data-name="Operations" status-number="1"></DataBox>
+    </div>
   </main>
 </template>
