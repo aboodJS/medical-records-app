@@ -2,6 +2,8 @@
 definePageMeta({
   layout: "admin",
 });
+
+let users = [{user: "Dr. John", role: "Doctor", status: "Active", lastActive: `2min`, actions: ""}]
 </script>
 
 <template>
@@ -28,5 +30,26 @@ definePageMeta({
       ><DataBox data-name="Active Now" status-number="1"></DataBox
       ><DataBox data-name="Pending Invites" status-number="1"></DataBox>
     </div>
+
+    <table class="w-full text-left text-sm">
+      <thead class="bg-slate-50 border-b border-slate-200">
+        <tr>
+          <th class="px-6 py-4 font-medium text-slate-500">User</th>
+          <th class="px-6 py-4 font-medium text-slate-500">Role</th>
+          <th class="px-6 py-4 font-medium text-slate-500">Status</th>
+          <th class="px-6 py-4 font-medium text-slate-500">Last Active</th>
+          <th class="px-6 py-4 font-medium text-slate-500">Action</th>
+        </tr>
+        <tbody v-for="user in users" class="divide-y divide-slate-100">
+          <tr class="group hover:bg-slate-50/50 transition-colors">
+            <td class="px-6 py-4"><div class="flex items-center gap-2 text-slate-700">{{ user.user }}</div></td>
+            <td class="px-6 py-4"><div class="flex items-center gap-2 text-slate-700">{{ user.role }}</div></td>
+            <td class="px-6 py-4"><div class="flex items-center gap-2 text-slate-700">{{ user.status }}</div></td>
+            <td class="px-6 py-4"><div class="flex items-center gap-2 text-slate-700">{{ user.lastActive }}</div></td>
+            <td class="px-6 py-4"><div class="flex items-center gap-2 text-slate-700">{{ user.actions }}</div></td>
+          </tr>
+        </tbody>
+      </thead>
+    </table>
   </main>
 </template>
