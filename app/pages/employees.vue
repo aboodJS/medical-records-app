@@ -1,0 +1,13 @@
+<template>
+  <h1>employees</h1>
+  <table>
+    <tbody>
+      <tr>
+        <th>name</th>
+        <th>age</th>
+        <th>Job</th>
+        <th>id</th>
+      </tr>
+    </tbody>
+  </table>
+</template>
