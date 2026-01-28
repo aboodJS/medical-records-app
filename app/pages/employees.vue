@@ -1,13 +1,10 @@
+<script lang="ts" setup>
+const { data: employees, error, status } = await useFetch("/api/employees");
+</script>
+
 <template>
   <h1>employees</h1>
-  <table>
-    <tbody>
-      <tr>
-        <th>name</th>
-        <th>age</th>
-        <th>Job</th>
-        <th>id</th>
-      </tr>
-    </tbody>
-  </table>
+  <ul>
+    <li v-for="employee in employees">{{ employee.name }}</li>
+  </ul>
 </template>

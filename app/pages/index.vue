@@ -1,18 +1,12 @@
-<script setup>
-const data = await useFetch("/api/patients");
-console.log(data.data.value);
+<script lang="ts" setup>
+const { data: patients, error, status } = await useFetch("/api/patients");
 </script>
 
 <template>
   <h1>patients</h1>
-  <table>
-    <tbody>
-      <tr>
-        <th>name</th>
-        <th>age</th>
-        <th>condition</th>
-        <th>id</th>
-      </tr>
-    </tbody>
-  </table>
+  <ul>
+    <li v-for="patient in patients">
+      {{ patient.name }}
+    </li>
+  </ul>
 </template>
