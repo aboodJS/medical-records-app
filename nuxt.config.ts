@@ -5,6 +5,9 @@ export default defineNuxtConfig({
   modules: ["nuxt-mongoose"],
   mongoose: {
     uri: process.env.MONGODB_URI,
+    options: {
+      dbName: "hospital-data",
+    },
 
     modelsDir: "models",
     devtools: true,

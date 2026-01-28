@@ -1,9 +1,14 @@
-import mongoose from "mongoose";
+import connection from "mongoose";
 
-export default defineEventHandler(() => {
-  const data = [
-    { name: "malek jehad", age: "15", condition: "stable", id: "1" },
-  ];
-
-  return data;
+export default defineEventHandler(async () => {
+  try {
+    const data = await connection.connection
+      .collection("patients")
+      .find({})
+      .toArray();
+    console.log(data);
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
 });
