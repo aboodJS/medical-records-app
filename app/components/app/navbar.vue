@@ -4,6 +4,7 @@
       <li><NuxtLink to="/">patients</NuxtLink></li>
       <li><NuxtLink to="/employees">employees</NuxtLink></li>
     </ul>
+    <div><NuxtLink to="/login">login</NuxtLink></div>
   </nav>
 </template>
 
@@ -13,5 +14,12 @@ nav ul {
   list-style: none;
   width: 20vh;
   justify-content: space-evenly;
+  padding: 0;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 </style>
