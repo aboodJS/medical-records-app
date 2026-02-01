@@ -4,7 +4,7 @@
       <li><NuxtLink to="/">patients</NuxtLink></li>
       <li><NuxtLink to="/employees">employees</NuxtLink></li>
     </ul>
-    <div><NuxtLink to="/login">login</NuxtLink></div>
+    <div><NuxtLink to="/signup">signup</NuxtLink></div>
   </nav>
 </template>
 
